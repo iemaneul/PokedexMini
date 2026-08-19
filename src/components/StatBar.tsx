@@ -1,0 +1,2 @@
+const labels: Record<string, string> = { hp: 'HP', attack: 'Attack', defense: 'Defense', 'special-attack': 'Sp. Attack', 'special-defense': 'Sp. Defense', speed: 'Speed' }
+export function StatBar({ name, value, color }: { name: string; value: number; color?: string }) { return <div className="stat"><span>{labels[name] || name}</span><b>{value}</b><div className="bar"><i style={{ width: `${Math.min(value / 1.5, 100)}%`, ...(color ? { background: color } : {}) }} /></div></div> }
